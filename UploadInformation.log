@@ -1,0 +1,168 @@
+2023-08-30 12:44:16,782 INFO:Data acquisition error. Repeated attempt to receive data at https://swapi.dev/api/planets/39
+2023-08-30 12:44:16,789 INFO:Data acquisition error. Repeated attempt to receive data at https://swapi.dev/api/planets/36
+2023-08-30 12:45:11,025 INFO:Data acquisition error. Repeated attempt to receive data at https://swapi.dev/api/planets/28
+2023-08-30 12:45:11,030 INFO:Data acquisition error. Repeated attempt to receive data at https://swapi.dev/api/planets/14
+2023-08-30 12:45:11,033 INFO:Data acquisition error. Repeated attempt to receive data at https://swapi.dev/api/planets/4
+2023-08-30 12:45:11,034 INFO:Data acquisition error. Repeated attempt to receive data at https://swapi.dev/api/planets/37
+2023-08-30 12:45:11,037 INFO:Data acquisition error. Repeated attempt to receive data at https://swapi.dev/api/planets/56
+2023-08-30 12:45:11,039 INFO:Data acquisition error. Repeated attempt to receive data at https://swapi.dev/api/planets/7
+2023-08-30 12:45:31,530 INFO:The entity type: planet, name: Tatooine, Odoo_id: 2, mother_id: 1 is created
+2023-08-30 12:45:31,530 INFO:The entity type: planet, name: Alderaan, Odoo_id: 3, mother_id: 2 is created
+2023-08-30 12:45:31,530 INFO:The entity type: planet, name: Yavin IV, Odoo_id: 4, mother_id: 3 is created
+2023-08-30 12:45:31,530 INFO:The entity type: planet, name: Hoth, Odoo_id: 5, mother_id: 4 is created
+2023-08-30 12:45:31,530 INFO:The entity type: planet, name: Dagobah, Odoo_id: 6, mother_id: 5 is created
+2023-08-30 12:45:31,530 INFO:The entity type: planet, name: Bespin, Odoo_id: 7, mother_id: 6 is created
+2023-08-30 12:45:31,530 INFO:The entity type: planet, name: Endor, Odoo_id: 8, mother_id: 7 is created
+2023-08-30 12:45:31,530 INFO:The entity type: planet, name: Naboo, Odoo_id: 9, mother_id: 8 is created
+2023-08-30 12:45:31,530 INFO:The entity type: planet, name: Coruscant, Odoo_id: 10, mother_id: 9 is created
+2023-08-30 12:45:31,530 INFO:The entity type: planet, name: Kamino, Odoo_id: 11, mother_id: 10 is created
+2023-08-30 12:45:31,530 INFO:The entity type: planet, name: Geonosis, Odoo_id: 12, mother_id: 11 is created
+2023-08-30 12:45:31,530 INFO:The entity type: planet, name: Utapau, Odoo_id: 13, mother_id: 12 is created
+2023-08-30 12:45:31,530 INFO:The entity type: planet, name: Mustafar, Odoo_id: 14, mother_id: 13 is created
+2023-08-30 12:45:31,531 INFO:The entity type: planet, name: Kashyyyk, Odoo_id: 15, mother_id: 14 is created
+2023-08-30 12:45:31,531 INFO:The entity type: planet, name: Polis Massa, Odoo_id: 16, mother_id: 15 is created
+2023-08-30 12:45:31,531 INFO:The entity type: planet, name: Mygeeto, Odoo_id: 17, mother_id: 16 is created
+2023-08-30 12:45:31,531 INFO:The entity type: planet, name: Felucia, Odoo_id: 18, mother_id: 17 is created
+2023-08-30 12:45:31,531 INFO:The entity type: planet, name: Cato Neimoidia, Odoo_id: 19, mother_id: 18 is created
+2023-08-30 12:45:31,531 INFO:The entity type: planet, name: Saleucami, Odoo_id: 20, mother_id: 19 is created
+2023-08-30 12:45:31,531 INFO:The entity type: planet, name: Stewjon, Odoo_id: 21, mother_id: 20 is created
+2023-08-30 12:45:31,531 INFO:The entity type: planet, name: Eriadu, Odoo_id: 22, mother_id: 21 is created
+2023-08-30 12:45:31,531 INFO:The entity type: planet, name: Corellia, Odoo_id: 23, mother_id: 22 is created
+2023-08-30 12:45:31,531 INFO:The entity type: planet, name: Rodia, Odoo_id: 24, mother_id: 23 is created
+2023-08-30 12:45:31,531 INFO:The entity type: planet, name: Nal Hutta, Odoo_id: 25, mother_id: 24 is created
+2023-08-30 12:45:31,531 INFO:The entity type: planet, name: Dantooine, Odoo_id: 26, mother_id: 25 is created
+2023-08-30 12:45:31,531 INFO:The entity type: planet, name: Bestine IV, Odoo_id: 27, mother_id: 26 is created
+2023-08-30 12:45:31,531 INFO:The entity type: planet, name: Ord Mantell, Odoo_id: 28, mother_id: 27 is created
+2023-08-30 12:45:31,532 INFO:The entity type: planet, name: Trandosha, Odoo_id: 29, mother_id: 29 is created
+2023-08-30 12:45:31,532 INFO:The entity type: planet, name: Socorro, Odoo_id: 30, mother_id: 30 is created
+2023-08-30 12:45:31,532 INFO:The entity type: planet, name: Mon Cala, Odoo_id: 31, mother_id: 31 is created
+2023-08-30 12:45:31,532 INFO:The entity type: planet, name: Chandrila, Odoo_id: 32, mother_id: 32 is created
+2023-08-30 12:45:31,532 INFO:The entity type: planet, name: Sullust, Odoo_id: 33, mother_id: 33 is created
+2023-08-30 12:45:31,532 INFO:The entity type: planet, name: Toydaria, Odoo_id: 34, mother_id: 34 is created
+2023-08-30 12:45:31,532 INFO:The entity type: planet, name: Malastare, Odoo_id: 35, mother_id: 35 is created
+2023-08-30 12:45:31,532 INFO:The entity type: planet, name: Dathomir, Odoo_id: 36, mother_id: 36 is created
+2023-08-30 12:45:31,532 INFO:The entity type: planet, name: Ryloth, Odoo_id: 37, mother_id: 37 is created
+2023-08-30 12:45:31,532 INFO:The entity type: planet, name: Aleen Minor, Odoo_id: 38, mother_id: 38 is created
+2023-08-30 12:45:31,532 INFO:The entity type: planet, name: Vulpter, Odoo_id: 39, mother_id: 39 is created
+2023-08-30 12:45:31,532 INFO:The entity type: planet, name: Troiken, Odoo_id: 40, mother_id: 40 is created
+2023-08-30 12:45:31,532 INFO:The entity type: planet, name: Tund, Odoo_id: 41, mother_id: 41 is created
+2023-08-30 12:45:31,532 INFO:The entity type: planet, name: Haruun Kal, Odoo_id: 42, mother_id: 42 is created
+2023-08-30 12:45:31,532 INFO:The entity type: planet, name: Cerea, Odoo_id: 43, mother_id: 43 is created
+2023-08-30 12:45:31,532 INFO:The entity type: planet, name: Glee Anselm, Odoo_id: 44, mother_id: 44 is created
+2023-08-30 12:45:31,532 INFO:The entity type: planet, name: Iridonia, Odoo_id: 45, mother_id: 45 is created
+2023-08-30 12:45:31,533 INFO:The entity type: planet, name: Tholoth, Odoo_id: 46, mother_id: 46 is created
+2023-08-30 12:45:31,533 INFO:The entity type: planet, name: Iktotch, Odoo_id: 47, mother_id: 47 is created
+2023-08-30 12:45:31,533 INFO:The entity type: planet, name: Quermia, Odoo_id: 48, mother_id: 48 is created
+2023-08-30 12:45:31,533 INFO:The entity type: planet, name: Dorin, Odoo_id: 49, mother_id: 49 is created
+2023-08-30 12:45:31,533 INFO:The entity type: planet, name: Champala, Odoo_id: 50, mother_id: 50 is created
+2023-08-30 12:45:31,533 INFO:The entity type: planet, name: Mirial, Odoo_id: 51, mother_id: 51 is created
+2023-08-30 12:45:31,533 INFO:The entity type: planet, name: Serenno, Odoo_id: 52, mother_id: 52 is created
+2023-08-30 12:45:31,533 INFO:The entity type: planet, name: Concord Dawn, Odoo_id: 53, mother_id: 53 is created
+2023-08-30 12:45:31,533 INFO:The entity type: planet, name: Zolan, Odoo_id: 54, mother_id: 54 is created
+2023-08-30 12:45:31,533 INFO:The entity type: planet, name: Ojom, Odoo_id: 55, mother_id: 55 is created
+2023-08-30 12:45:31,533 INFO:The entity type: planet, name: Skako, Odoo_id: 56, mother_id: 56 is created
+2023-08-30 12:45:31,533 INFO:The entity type: planet, name: Muunilinst, Odoo_id: 57, mother_id: 57 is created
+2023-08-30 12:45:31,533 INFO:The entity type: planet, name: Shili, Odoo_id: 58, mother_id: 58 is created
+2023-08-30 12:45:31,533 INFO:The entity type: planet, name: Kalee, Odoo_id: 59, mother_id: 59 is created
+2023-08-30 12:45:31,533 INFO:The entity type: planet, name: Umbara, Odoo_id: 60, mother_id: 60 is created
+2023-08-30 12:45:59,250 INFO:Data acquisition error. Repeated attempt to receive data at https://swapi.dev/api/people/27
+2023-08-30 12:46:12,750 INFO:Data acquisition error. Repeated attempt to receive data at https://swapi.dev/api/people/38
+2023-08-30 12:46:45,359 INFO:Data acquisition error. Repeated attempt to receive data at https://swapi.dev/api/people/25
+2023-08-30 12:46:45,359 INFO:Data acquisition error. Repeated attempt to receive data at https://swapi.dev/api/people/32
+2023-08-30 12:46:45,360 INFO:Data acquisition error. Repeated attempt to receive data at https://swapi.dev/api/people/65
+2023-08-30 12:46:45,363 INFO:Data acquisition error. Repeated attempt to receive data at https://swapi.dev/api/people/62
+2023-08-30 12:46:45,399 INFO:Data acquisition error. Repeated attempt to receive data at https://swapi.dev/api/people/79
+2023-08-30 12:46:45,406 INFO:Data acquisition error. Repeated attempt to receive data at https://swapi.dev/api/people/76
+2023-08-30 12:46:45,408 INFO:Data acquisition error. Repeated attempt to receive data at https://swapi.dev/api/people/55
+2023-08-30 12:46:45,413 INFO:Data acquisition error. Repeated attempt to receive data at https://swapi.dev/api/people/26
+2023-08-30 12:46:45,418 INFO:Data acquisition error. Repeated attempt to receive data at https://swapi.dev/api/people/23
+2023-08-30 12:46:45,425 INFO:Data acquisition error. Repeated attempt to receive data at https://swapi.dev/api/people/74
+2023-08-30 12:46:45,430 INFO:Data acquisition error. Repeated attempt to receive data at https://swapi.dev/api/people/21
+2023-08-30 12:46:45,435 INFO:Data acquisition error. Repeated attempt to receive data at https://swapi.dev/api/people/60
+2023-08-30 12:46:45,440 INFO:Data acquisition error. Repeated attempt to receive data at https://swapi.dev/api/people/11
+2023-08-30 12:46:45,444 INFO:Data acquisition error. Repeated attempt to receive data at https://swapi.dev/api/people/82
+2023-08-30 12:46:45,450 INFO:Data acquisition error. Repeated attempt to receive data at https://swapi.dev/api/people/77
+2023-08-30 12:46:45,454 INFO:Data acquisition error. Repeated attempt to receive data at https://swapi.dev/api/people/18
+2023-08-30 12:46:45,460 INFO:Data acquisition error. Repeated attempt to receive data at https://swapi.dev/api/people/71
+2023-08-30 12:47:08,172 INFO:The entity type: character, name: Luke Skywalker, Odoo_id: 8, mother_id: 1 is created
+2023-08-30 12:47:08,172 INFO:The entity type: character, name: C-3PO, Odoo_id: 9, mother_id: 2 is created
+2023-08-30 12:47:08,172 INFO:The entity type: character, name: R2-D2, Odoo_id: 10, mother_id: 3 is created
+2023-08-30 12:47:08,172 INFO:The entity type: character, name: Darth Vader, Odoo_id: 11, mother_id: 4 is created
+2023-08-30 12:47:08,172 INFO:The entity type: character, name: Leia Organa, Odoo_id: 12, mother_id: 5 is created
+2023-08-30 12:47:08,173 INFO:The entity type: character, name: Owen Lars, Odoo_id: 13, mother_id: 6 is created
+2023-08-30 12:47:08,173 INFO:The entity type: character, name: Beru Whitesun lars, Odoo_id: 14, mother_id: 7 is created
+2023-08-30 12:47:08,173 INFO:The entity type: character, name: R5-D4, Odoo_id: 15, mother_id: 8 is created
+2023-08-30 12:47:08,173 INFO:The entity type: character, name: Biggs Darklighter, Odoo_id: 16, mother_id: 9 is created
+2023-08-30 12:47:08,173 INFO:The entity type: character, name: Obi-Wan Kenobi, Odoo_id: 17, mother_id: 10 is created
+2023-08-30 12:47:08,173 INFO:The entity type: character, name: Anakin Skywalker, Odoo_id: 18, mother_id: 11 is created
+2023-08-30 12:47:08,173 INFO:The entity type: character, name: Wilhuff Tarkin, Odoo_id: 19, mother_id: 12 is created
+2023-08-30 12:47:08,173 INFO:The entity type: character, name: Chewbacca, Odoo_id: 20, mother_id: 13 is created
+2023-08-30 12:47:08,173 INFO:The entity type: character, name: Han Solo, Odoo_id: 21, mother_id: 14 is created
+2023-08-30 12:47:08,173 INFO:The entity type: character, name: Greedo, Odoo_id: 22, mother_id: 15 is created
+2023-08-30 12:47:08,173 INFO:The entity type: character, name: Jabba Desilijic Tiure, Odoo_id: 23, mother_id: 16 is created
+2023-08-30 12:47:08,173 INFO:The entity type: character, name: Wedge Antilles, Odoo_id: 24, mother_id: 18 is created
+2023-08-30 12:47:08,173 INFO:The entity type: character, name: Jek Tono Porkins, Odoo_id: 25, mother_id: 19 is created
+2023-08-30 12:47:08,174 INFO:The entity type: character, name: Yoda, Odoo_id: 26, mother_id: 20 is created
+2023-08-30 12:47:08,174 INFO:The entity type: character, name: Palpatine, Odoo_id: 27, mother_id: 21 is created
+2023-08-30 12:47:08,174 INFO:The entity type: character, name: Boba Fett, Odoo_id: 28, mother_id: 22 is created
+2023-08-30 12:47:08,174 INFO:The entity type: character, name: IG-88, Odoo_id: 29, mother_id: 23 is created
+2023-08-30 12:47:08,174 INFO:The entity type: character, name: Bossk, Odoo_id: 30, mother_id: 24 is created
+2023-08-30 12:47:08,174 INFO:The entity type: character, name: Lando Calrissian, Odoo_id: 31, mother_id: 25 is created
+2023-08-30 12:47:08,174 INFO:The entity type: character, name: Lobot, Odoo_id: 32, mother_id: 26 is created
+2023-08-30 12:47:08,174 INFO:The entity type: character, name: Ackbar, Odoo_id: 33, mother_id: 27 is created
+2023-08-30 12:47:08,174 INFO:The entity type: character, name: Mon Mothma, Odoo_id: 34, mother_id: 28 is created
+2023-08-30 12:47:08,174 INFO:The entity type: character, name: Arvel Crynyd, Odoo_id: 35, mother_id: 29 is created
+2023-08-30 12:47:08,174 INFO:The entity type: character, name: Wicket Systri Warrick, Odoo_id: 36, mother_id: 30 is created
+2023-08-30 12:47:08,174 INFO:The entity type: character, name: Nien Nunb, Odoo_id: 37, mother_id: 31 is created
+2023-08-30 12:47:08,174 INFO:The entity type: character, name: Qui-Gon Jinn, Odoo_id: 38, mother_id: 32 is created
+2023-08-30 12:47:08,174 INFO:The entity type: character, name: Nute Gunray, Odoo_id: 39, mother_id: 33 is created
+2023-08-30 12:47:08,175 INFO:The entity type: character, name: Finis Valorum, Odoo_id: 40, mother_id: 34 is created
+2023-08-30 12:47:08,175 INFO:The entity type: character, name: Padm\xe9 Amidala, Odoo_id: 41, mother_id: 35 is created
+2023-08-30 12:47:08,176 INFO:The entity type: character, name: Jar Jar Binks, Odoo_id: 42, mother_id: 36 is created
+2023-08-30 12:47:08,176 INFO:The entity type: character, name: Roos Tarpals, Odoo_id: 43, mother_id: 37 is created
+2023-08-30 12:47:08,176 INFO:The entity type: character, name: Rugor Nass, Odoo_id: 44, mother_id: 38 is created
+2023-08-30 12:47:08,176 INFO:The entity type: character, name: Ric Oli\xe9, Odoo_id: 45, mother_id: 39 is created
+2023-08-30 12:47:08,176 INFO:The entity type: character, name: Watto, Odoo_id: 46, mother_id: 40 is created
+2023-08-30 12:47:08,176 INFO:The entity type: character, name: Sebulba, Odoo_id: 47, mother_id: 41 is created
+2023-08-30 12:47:08,176 INFO:The entity type: character, name: Quarsh Panaka, Odoo_id: 48, mother_id: 42 is created
+2023-08-30 12:47:08,176 INFO:The entity type: character, name: Shmi Skywalker, Odoo_id: 49, mother_id: 43 is created
+2023-08-30 12:47:08,176 INFO:The entity type: character, name: Darth Maul, Odoo_id: 50, mother_id: 44 is created
+2023-08-30 12:47:08,176 INFO:The entity type: character, name: Bib Fortuna, Odoo_id: 51, mother_id: 45 is created
+2023-08-30 12:47:08,176 INFO:The entity type: character, name: Ayla Secura, Odoo_id: 52, mother_id: 46 is created
+2023-08-30 12:47:08,176 INFO:The entity type: character, name: Ratts Tyerel, Odoo_id: 53, mother_id: 47 is created
+2023-08-30 12:47:08,176 INFO:The entity type: character, name: Dud Bolt, Odoo_id: 54, mother_id: 48 is created
+2023-08-30 12:47:08,176 INFO:The entity type: character, name: Gasgano, Odoo_id: 55, mother_id: 49 is created
+2023-08-30 12:47:08,176 INFO:The entity type: character, name: Ben Quadinaros, Odoo_id: 56, mother_id: 50 is created
+2023-08-30 12:47:08,176 INFO:The entity type: character, name: Mace Windu, Odoo_id: 57, mother_id: 51 is created
+2023-08-30 12:47:08,177 INFO:The entity type: character, name: Ki-Adi-Mundi, Odoo_id: 58, mother_id: 52 is created
+2023-08-30 12:47:08,177 INFO:The entity type: character, name: Kit Fisto, Odoo_id: 59, mother_id: 53 is created
+2023-08-30 12:47:08,177 INFO:The entity type: character, name: Eeth Koth, Odoo_id: 60, mother_id: 54 is created
+2023-08-30 12:47:08,177 INFO:The entity type: character, name: Adi Gallia, Odoo_id: 61, mother_id: 55 is created
+2023-08-30 12:47:08,177 INFO:The entity type: character, name: Saesee Tiin, Odoo_id: 62, mother_id: 56 is created
+2023-08-30 12:47:08,177 INFO:The entity type: character, name: Yarael Poof, Odoo_id: 63, mother_id: 57 is created
+2023-08-30 12:47:08,177 INFO:The entity type: character, name: Plo Koon, Odoo_id: 64, mother_id: 58 is created
+2023-08-30 12:47:08,177 INFO:The entity type: character, name: Mas Amedda, Odoo_id: 65, mother_id: 59 is created
+2023-08-30 12:47:08,177 INFO:The entity type: character, name: Gregar Typho, Odoo_id: 66, mother_id: 60 is created
+2023-08-30 12:47:08,177 INFO:The entity type: character, name: Cord\xe9, Odoo_id: 67, mother_id: 61 is created
+2023-08-30 12:47:08,177 INFO:The entity type: character, name: Cliegg Lars, Odoo_id: 68, mother_id: 62 is created
+2023-08-30 12:47:08,177 INFO:The entity type: character, name: Poggle the Lesser, Odoo_id: 69, mother_id: 63 is created
+2023-08-30 12:47:08,177 INFO:The entity type: character, name: Luminara Unduli, Odoo_id: 70, mother_id: 64 is created
+2023-08-30 12:47:08,177 INFO:The entity type: character, name: Barriss Offee, Odoo_id: 71, mother_id: 65 is created
+2023-08-30 12:47:08,177 INFO:The entity type: character, name: Dorm\xe9, Odoo_id: 72, mother_id: 66 is created
+2023-08-30 12:47:08,177 INFO:The entity type: character, name: Dooku, Odoo_id: 73, mother_id: 67 is created
+2023-08-30 12:47:08,177 INFO:The entity type: character, name: Bail Prestor Organa, Odoo_id: 74, mother_id: 68 is created
+2023-08-30 12:47:08,178 INFO:The entity type: character, name: Jango Fett, Odoo_id: 75, mother_id: 69 is created
+2023-08-30 12:47:08,178 INFO:The entity type: character, name: Zam Wesell, Odoo_id: 76, mother_id: 70 is created
+2023-08-30 12:47:08,178 INFO:The entity type: character, name: Dexter Jettster, Odoo_id: 77, mother_id: 71 is created
+2023-08-30 12:47:08,178 INFO:The entity type: character, name: Lama Su, Odoo_id: 78, mother_id: 72 is created
+2023-08-30 12:47:08,178 INFO:The entity type: character, name: Taun We, Odoo_id: 79, mother_id: 73 is created
+2023-08-30 12:47:08,178 INFO:The entity type: character, name: Jocasta Nu, Odoo_id: 80, mother_id: 74 is created
+2023-08-30 12:47:08,178 INFO:The entity type: character, name: R4-P17, Odoo_id: 81, mother_id: 75 is created
+2023-08-30 12:47:08,178 INFO:The entity type: character, name: Wat Tambor, Odoo_id: 82, mother_id: 76 is created
+2023-08-30 12:47:08,178 INFO:The entity type: character, name: San Hill, Odoo_id: 83, mother_id: 77 is created
+2023-08-30 12:47:08,178 INFO:The entity type: character, name: Shaak Ti, Odoo_id: 84, mother_id: 78 is created
+2023-08-30 12:47:08,178 INFO:The entity type: character, name: Grievous, Odoo_id: 85, mother_id: 79 is created
+2023-08-30 12:47:08,178 INFO:The entity type: character, name: Tarfful, Odoo_id: 86, mother_id: 80 is created
+2023-08-30 12:47:08,178 INFO:The entity type: character, name: Raymus Antilles, Odoo_id: 87, mother_id: 81 is created
+2023-08-30 12:47:08,178 INFO:The entity type: character, name: Sly Moore, Odoo_id: 88, mother_id: 82 is created
+2023-08-30 12:47:08,178 INFO:The entity type: character, name: Tion Medon, Odoo_id: 89, mother_id: 83 is created
