@@ -11,9 +11,11 @@
 - requests
 - xmlrpc.client
 - tqdm
+- io
+- PIL
 
 ### Установка зависимостей:
-pip install aiohttp requests tqdm
+pip install aiohttp requests tqdm io PIL
 
 или
 

@@ -8,6 +8,8 @@ import xmlrpc.client
 import logging
 import argparse
 from tqdm.asyncio import tqdm_asyncio
+from io import BytesIO
+from PIL import Image
 
 
 def parameters(config_path):
@@ -43,6 +45,8 @@ def parameters(config_path):
         logging.info(f'Database connection error. Incorrect localhost. Current localhost is "{params["url"]}"')
         print('Ошибка подключения к БД. Неверный localhost.')
         sys.exit(1)
+
+
 
 
 def generate_urls(base_url):
@@ -98,7 +102,6 @@ class Asynchron:
                 json_list = await tqdm_asyncio.gather(*[self.request_entity(session, url) for url in urls],
                                                       desc=f"Получение информации о {type}")
             return json_list
-
 
 class Planets:
     """Class processes json files with information about planets"""
@@ -158,7 +161,8 @@ class Characters:
             image_dict: dict with image info(dict)"""
         changed_characters_dict = {}
         for characters_id, values in characters_dict.items():
-            values.update({'image_1920': image_dict.get(characters_id)})
+            if image_dict.get(characters_id) != "":
+                values.update({'image_1920': image_dict.get(characters_id)})
             changed_characters_dict.update({characters_id: values})
         return changed_characters_dict
 
@@ -175,7 +179,6 @@ class Characters:
             new_characters_dict.update({key: value})
         return new_characters_dict
 
-
 class CharactersImage:
     """Class generates urls for image requests and decode images"""
     def generate_photo_urls(self, base_url, len):
@@ -187,6 +190,14 @@ class CharactersImage:
         urls_to_request = [f'{base_url}{entity_id}.jpg' for entity_id in range(1, len + 1)]
         return urls_to_request
 
+    def determine_response_type(self, response):
+        try:
+            image = Image.open(BytesIO(response))
+            return "image"
+        except:
+            # В случае неудачи, предполагаем, что это HTML
+            return "html"
+
     def upgrade_photo(self, image_info):
         """upgrade_photo(image_info)
 
@@ -195,9 +206,10 @@ class CharactersImage:
         image_dict = {}
         for i in range(len(image_info)):
             character_id = i + 1
-            try:
+            type = self.determine_response_type(image_info[i])
+            if type == "image":
                 image = base64.b64encode(image_info[i]).decode('ascii')
-            except Exception:
+            else:
                 image = ''
                 logging.info(f'Image error. The character {character_id} will be uploaded without image.')
             image_dict.update({character_id: image})
@@ -205,8 +217,7 @@ class CharactersImage:
 
 
 class Odoo:
-    """Class checks given entity list in the current database preventing duplication
-    and load remaining info into Odoo database"""
+    """Class checks given entity list in the current database preventing duplication and load remaining info into Odoo database"""
     def check_entity_in_odoo(self, params, base_model, uid, models, entity_dict):
         """check_entity_in_odoo(params, base_model, uid, models, entity_dict)
 
@@ -309,3 +320,5 @@ if __name__ == "__main__":
     new_characters_dict = character.upgrade_characters(characters_dict, ids_planets_dict)
     ids_character_dict = odoo.upload_entity_info_into_oddo(params, params["characters_model"], uid, models, new_characters_dict, ids_character_dict, 'character')
     print('Герои загружены в Odoo')
+
+
