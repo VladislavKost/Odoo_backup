@@ -12,8 +12,8 @@ from io import BytesIO
 from PIL import Image
 
 
-def parameters(config_path):
-    """parameter(config_path)
+def get_parameters(config_path):
+    """get_parameters(config_path)
 
     Get parameters from configuration file located in config_path
     config_pash: path(str)"""
@@ -57,21 +57,37 @@ def parameters(config_path):
         sys.exit(1)
 
 
-def generate_urls(base_url):
-    """generate_urls(base_url)
+class Generator:
+    def generate_entity_urls(self, base_url):
+        """generate_entity_urls(base_url)
 
-    Generates URL for future requests on the base of base_url
-    base_url: url(str)"""
-    amount = requests.get(base_url).json().get("count")
-    urls_to_request = [f"{base_url}{entity_id}" for entity_id in range(1, amount + 2)]
-    return urls_to_request
+        Generates URL for future requests on the base of base_url
+        base_url: url(str)"""
+        amount = requests.get(base_url).json().get("count")
+        if amount % 10 == 0:
+            pages = amount // 10
+        else:
+            pages = amount // 10 + 1
+        urls_to_request = [f"{base_url}?page={page}" for page in range(1, pages + 1)]
+        return urls_to_request
+
+    def generate_photo_urls(self, base_url, len):
+        """generate_photo_urls(base_url, len)
+
+        Generates URL for future photo requests on the base of base_url
+        base_url: url(str)
+        len: len of the character dict list(int)"""
+        urls_to_request = [
+            f"{base_url}{entity_id}.jpg" for entity_id in range(1, len + 1)
+        ]
+        return urls_to_request
 
 
 class Asynchron:
     """Class makes asynchronous requests to the API"""
 
-    async def request_entity(self, session, url):
-        """request_entity(session, url)
+    async def get_entity(self, session, url):
+        """get_entity(session, url)
 
         Make requests on the given URL.
         session: aiohttp.ClientSession()
@@ -85,8 +101,8 @@ class Asynchron:
                     f"Data acquisition error. Repeated attempt to receive data at {url}"
                 )
 
-    async def request_photo(self, session, url):
-        """request_photo(session, url)
+    async def get_photo(self, session, url):
+        """get_photo(session, url)
 
         Make requests on the given URL.
         session: aiohttp.ClientSession()
@@ -110,13 +126,15 @@ class Asynchron:
         async with aiohttp.ClientSession() as session:
             if photo:
                 json_list = await tqdm_asyncio.gather(
-                    *[self.request_photo(session, url) for url in urls],
+                    *[self.get_photo(session, url) for url in urls],
                     desc="Получение информации об изображениях",
+                    leave=False,
                 )
             else:
                 json_list = await tqdm_asyncio.gather(
-                    *[self.request_entity(session, url) for url in urls],
+                    *[self.get_entity(session, url) for url in urls],
                     desc=f"Получение информации о {type}",
+                    leave=False,
                 )
             return json_list
 
@@ -130,33 +148,33 @@ class Planets:
         Processes json list file.
         json_list: list of dicts(list)"""
         planet_dict = {}
-        for i in range(len(json_list)):
-            if "Not found" in json_list[i].values():
-                continue
-            planet_info = json_list[i]
-            planet_id = i + 1
-            name = planet_info.get("name", "")
-            if name == "unknown":
-                continue
-            rotation_period = planet_info.get("rotation_period")
-            orbital_period = planet_info.get("orbital_period")
-            diameter = planet_info.get("diameter")
-            population = planet_info.get("population")
-            diameter, rotation_period, orbital_period, population = [
-                value if (value != "unknown" and value != "0") else ""
-                for value in [diameter, rotation_period, orbital_period, population]
-            ]
-            planet_dict.update(
-                {
-                    planet_id: {
-                        "name": name,
-                        "diameter": diameter,
-                        "rotation_period": rotation_period,
-                        "orbital_period": orbital_period,
-                        "population": population,
+        for page in json_list:
+            planets_list = page.get("results", "")
+            for planet in planets_list:
+                name = planet.get("name", "")
+                if name == "unknown":
+                    continue
+                planet_url = planet.get("url")
+                planet_id = int(planet_url[(planet_url[:-1].rfind("/") + 1) : -1])
+                rotation_period = planet.get("rotation_period")
+                orbital_period = planet.get("orbital_period")
+                diameter = planet.get("diameter")
+                population = planet.get("population")
+                diameter, rotation_period, orbital_period, population = [
+                    value if (value != "unknown" and value != "0") else ""
+                    for value in [diameter, rotation_period, orbital_period, population]
+                ]
+                planet_dict.update(
+                    {
+                        planet_id: {
+                            "name": name,
+                            "diameter": diameter,
+                            "rotation_period": rotation_period,
+                            "orbital_period": orbital_period,
+                            "population": population,
+                        }
                     }
-                }
-            )
+                )
         return planet_dict
 
 
@@ -170,22 +188,26 @@ class Characters:
         json_list: list of dicts(list)"""
         characters_dict = {}
         planet_id = ""
-        for i in range(len(json_list)):
-            if "Not found" in json_list[i].values():
-                continue
-            character_info = json_list[i]
-            character_id = i + 1
-            name = character_info.get("name", "")
-            if name == "unknown":
-                continue
-            planet_url = character_info.get("homeworld", "")
-            if planet_url != "":
-                planet_id = int(planet_url[(planet_url[:-1].rfind("/") + 1) : -1])
-            characters_dict.update({character_id: {"name": name, "planet": planet_id}})
+        for page in json_list:
+            characters_list = page.get("results", "")
+            for character in characters_list:
+                name = character.get("name", "")
+                if name == "unknown":
+                    continue
+                character_url = character.get("url")
+                character_id = int(
+                    character_url[(character_url[:-1].rfind("/") + 1) : -1]
+                )
+                planet_url = character.get("homeworld", "")
+                if planet_url != "":
+                    planet_id = int(planet_url[(planet_url[:-1].rfind("/") + 1) : -1])
+                characters_dict.update(
+                    {character_id: {"name": name, "planet": planet_id}}
+                )
         return characters_dict
 
-    def upgrage_character_photo(self, characters_dict, image_dict):
-        """upgrage_character_photo(characters_dict, image_dict)
+    def upgrage_characters_photo(self, characters_dict, image_dict):
+        """upgrage_characters_photo(characters_dict, image_dict)
 
         Add image information to the characters dictionary.
         characters_dict: dict with character info(dict)
@@ -197,8 +219,8 @@ class Characters:
             changed_characters_dict.update({characters_id: values})
         return changed_characters_dict
 
-    def upgrade_characters(self, characters_dict, ids_planets_dict):
-        """upgrade_characters(characters_dict, ids_planets_dict)
+    def upgrade_characters_info(self, characters_dict, ids_planets_dict):
+        """upgrade_characters_info(characters_dict, ids_planets_dict)
 
         Add planets odoo ids information to the characters dictionary.
         characters_dict: dict with character info(dict)
@@ -213,17 +235,6 @@ class Characters:
 
 class CharactersImage:
     """Class generates urls for image requests and decode images"""
-
-    def generate_photo_urls(self, base_url, len):
-        """generate_photo_urls(base_url, len)
-
-        Generates URL for future photo requests on the base of base_url
-        base_url: url(str)
-        len: len of the character dict list(int)"""
-        urls_to_request = [
-            f"{base_url}{entity_id}.jpg" for entity_id in range(1, len + 1)
-        ]
-        return urls_to_request
 
     def determine_response_type(self, response):
         try:
@@ -335,13 +346,14 @@ if __name__ == "__main__":
     config_path = args.config
 
     # Получение параметров программы
-    params, uid, models = parameters(config_path)
+    params, uid, models = get_parameters(config_path)
 
     # Экземляр класса асинхрона
     asynchron = Asynchron()
 
     # Генерация url для планет
-    urls_to_request = generate_urls(params.get("planet_url"))
+    generator = Generator()
+    urls_to_request = generator.generate_entity_urls(params.get("planet_url"))
 
     # Получаем данные о планетах с API
     json_planets = asyncio.run(asynchron.request_all(urls_to_request, "планетах"))
@@ -365,7 +377,7 @@ if __name__ == "__main__":
     print("Планеты загружены в Odoo")
 
     # Генерация url для героев
-    urls_to_request = generate_urls(params.get("character_url"))
+    urls_to_request = generator.generate_entity_urls(params.get("character_url"))
 
     # Получаем данные о героях с API
     json_characters = asyncio.run(asynchron.request_all(urls_to_request, "героях"))
@@ -374,14 +386,14 @@ if __name__ == "__main__":
 
     # Получаем фотографии героев
     get_photo = CharactersImage()
-    urls_to_request = get_photo.generate_photo_urls(
+    urls_to_request = generator.generate_photo_urls(
         params.get("image_url"), len(characters_dict) + 1
     )
     photo_characters = asyncio.run(asynchron.request_all(urls_to_request, photo=True))
     image_dict = get_photo.upgrade_photo(photo_characters)
 
     # Добавляем фото к героям
-    changed_characters_dict = character.upgrage_character_photo(
+    changed_characters_dict = character.upgrage_characters_photo(
         characters_dict, image_dict
     )
 
@@ -389,7 +401,7 @@ if __name__ == "__main__":
     characters_dict, ids_character_dict = odoo.check_entity_in_odoo(
         params, params["characters_model"], uid, models, changed_characters_dict
     )
-    new_characters_dict = character.upgrade_characters(
+    new_characters_dict = character.upgrade_characters_info(
         characters_dict, ids_planets_dict
     )
     ids_character_dict = odoo.upload_entity_info_into_oddo(
