@@ -71,14 +71,14 @@ class Generator:
         urls_to_request = [f"{base_url}?page={page}" for page in range(1, pages + 1)]
         return urls_to_request
 
-    def generate_photo_urls(self, base_url, len):
+    def generate_photo_urls(self, base_url, characters_ids):
         """generate_photo_urls(base_url, len)
 
         Generates URL for future photo requests on the base of base_url
         base_url: url(str)
         len: len of the character dict list(int)"""
         urls_to_request = [
-            f"{base_url}{entity_id}.jpg" for entity_id in range(1, len + 1)
+            f"{base_url}{characters_id}.jpg" for characters_id in characters_ids
         ]
         return urls_to_request
 
@@ -244,23 +244,24 @@ class CharactersImage:
             # В случае неудачи, предполагаем, что это HTML
             return "html"
 
-    def upgrade_photo(self, image_info):
+    def upgrade_photo(self, image_info, characters_list):
         """upgrade_photo(image_info)
 
         Processes decoding image
         image_info: list with image information(list)"""
         image_dict = {}
-        for i in range(len(image_info)):
-            character_id = i + 1
-            type = self.determine_response_type(image_info[i])
+        image_index = 0
+        for character_id in characters_list:
+            type = self.determine_response_type(image_info[image_index])
             if type == "image":
-                image = base64.b64encode(image_info[i]).decode("ascii")
+                image = base64.b64encode(image_info[image_index]).decode("ascii")
             else:
                 image = ""
                 logging.info(
                     f"Image error. The character {character_id} will be uploaded without image."
                 )
             image_dict.update({character_id: image})
+            image_index += 1
         return image_dict
 
 
@@ -387,10 +388,10 @@ if __name__ == "__main__":
     # Получаем фотографии героев
     get_photo = CharactersImage()
     urls_to_request = generator.generate_photo_urls(
-        params.get("image_url"), len(characters_dict) + 1
+        params.get("image_url"), list(characters_dict.keys())
     )
     photo_characters = asyncio.run(asynchron.request_all(urls_to_request, photo=True))
-    image_dict = get_photo.upgrade_photo(photo_characters)
+    image_dict = get_photo.upgrade_photo(photo_characters, list(characters_dict.keys()))
 
     # Добавляем фото к героям
     changed_characters_dict = character.upgrage_characters_photo(
